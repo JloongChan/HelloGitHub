@@ -12,7 +12,7 @@ public class Thread_demo1 {
 				product++;
 				System.out.println("Éú²ú£ºproduct = " + product);
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(800);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -34,7 +34,7 @@ public class Thread_demo1 {
 					}
 				}
 				try {
-					Thread.sleep(2000);
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
