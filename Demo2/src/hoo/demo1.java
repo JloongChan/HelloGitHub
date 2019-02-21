@@ -13,7 +13,6 @@ public class demo1 {
         lists.add("1");
         lists.add("1");
         lists.add("1");
-        lists.add("1");
 
         String[] str2 = {"1", "2", "3"};
         System.out.println(str2.getClass().getComponentType());
