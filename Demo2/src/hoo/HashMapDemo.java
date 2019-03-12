@@ -1,6 +1,7 @@
 package hoo;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -26,6 +27,13 @@ public class HashMapDemo {
         map.put("C9", "C9");
         map.put("Aw", "Aw");
         map.put("Aw1", "Aw1");
+
+
+        LinkedHashMap aa = new LinkedHashMap(4);
+        aa.put("C9", "C9");
+        aa.put("Aw", "Aw");
+        aa.put("Aw1", "Aw1");
+        System.out.println();
 
         System.out.println(map);
     }
