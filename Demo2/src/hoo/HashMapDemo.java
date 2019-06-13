@@ -14,7 +14,7 @@ public class HashMapDemo {
         /**
          *
          */
-        Map<String, Object> map = new HashMap<>(4);
+        Map<String, Object> map = new HashMap<>(8);
         map.put("C9", "C9");
         map.put("Aw", "Aw");
         map.put("Aw1", "Aw1");
@@ -23,17 +23,19 @@ public class HashMapDemo {
         /**
             Entry 后插入的排前面，每次自动扩容后，会把Entry后前颠倒
         **/
-        Map<String, Object> map2 = new WeakHashMap<>(4);
+        Map<String, Object> map2 = new WeakHashMap(8);
         map.put("C9", "C9");
         map.put("Aw", "Aw");
         map.put("Aw1", "Aw1");
 
 
-        LinkedHashMap aa = new LinkedHashMap(4);
+        LinkedHashMap aa = new LinkedHashMap(8);
         aa.put("C9", "C9");
         aa.put("Aw", "Aw");
         aa.put("Aw1", "Aw1");
         System.out.println();
+
+        // master commit
 
         System.out.println(map);
     }
