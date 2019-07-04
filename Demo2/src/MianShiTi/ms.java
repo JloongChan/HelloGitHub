@@ -16,13 +16,13 @@ public class ms {
 			}
 		}
 		System.out.println(i +"  "+ j);
-		/** ×î¼òµ¥µÄÒ»Ìâ    10 5 **/
+		/** ï¿½ï¿½òµ¥µï¿½Ò»ï¿½ï¿½    10 5 **/
 		
 		
 		String s1 = "hello";
-		String s2 = "he" + new String("llo");
+		String s2 = "he" + "llo";
 		System.out.println(s1 == s2);
-		/** ±È½ÏµØÖ·£¬String´æÔÚ×Ö·û´®³£Á¿³Ø **/
+		/** ï¿½È½Ïµï¿½Ö·ï¿½ï¿½Stringï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ **/
 	}
 	
 }

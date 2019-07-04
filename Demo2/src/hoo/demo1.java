@@ -37,7 +37,7 @@ public class demo1 {
         /* 生成四位随机数字 */
         String str="0123456789";
         Random r = new Random();
-        String arr[] = new String [4];
+        String[] arr = new String[4];
         StringBuffer b = new StringBuffer();
         for(int i=0; i < 4; i++)
         {

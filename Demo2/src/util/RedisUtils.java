@@ -26,10 +26,7 @@ public class RedisUtils {
 
         String result = jedis.set(lockKey, requestId, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);
 
-        if (LOCK_SUCCESS.equals(result)) {
-            return true;
-        }
-        return false;
+        return LOCK_SUCCESS.equals(result);
 
     }
 
@@ -45,10 +42,7 @@ public class RedisUtils {
         String script = "if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end";
         Object result = jedis.eval(script, Collections.singletonList(lockKey), Collections.singletonList(requestId));
 
-        if (RELEASE_SUCCESS.equals(result)) {
-            return true;
-        }
-        return false;
+        return RELEASE_SUCCESS.equals(result);
 
     }
 
