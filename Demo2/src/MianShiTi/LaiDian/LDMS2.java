@@ -9,6 +9,7 @@ public class LDMS2 {
 
 	static int count = 0;
 	static int max = 30;
+
 	public static void main(String[] args) {
 		Ta a = new Ta(0, "A");
 		Ta b = new Ta(1, "B");
@@ -21,7 +22,7 @@ public class LDMS2 {
 
 class Ta extends Thread {
 
-	private static final ReentrantLock lock = new ReentrantLock();
+	private static final ReentrantLock lock = new ReentrantLock(true);
 
 	private int value;
 	private String name;
@@ -34,19 +35,18 @@ class Ta extends Thread {
 	@Override
 	public void run() {
 		for (;;) {
-			lock.lock();
-			if (LDMS2.count % 3 == value) {
-				System.out.println(name + " " + LDMS2.count);
-				++LDMS2.count;
-			}
-			lock.unlock();
 			try {
-				Thread.sleep(10);	// 小憩一会，避免提前竞争锁
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			if (LDMS2.count >= LDMS2.max) {
-				break;
+				lock.lock();
+				if (LDMS2.count > LDMS2.max) {
+					break;
+				}
+				System.out.println(lock);
+				if (LDMS2.count % 3 == value) {
+					System.out.println(name + " " + LDMS2.count);
+					++LDMS2.count;
+				}
+			} finally {
+				lock.unlock();
 			}
 		}
 	}
