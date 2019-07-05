@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class LDMS2 {
 
-	static int count = 0;
+	static int index = 0;
 	static int max = 30;
 
 	public static void main(String[] args) {
@@ -37,13 +37,12 @@ class Ta extends Thread {
 		for (;;) {
 			try {
 				lock.lock();
-				if (LDMS2.count > LDMS2.max) {
+				if (LDMS2.index >= LDMS2.max) {
 					break;
 				}
-				System.out.println(lock);
-				if (LDMS2.count % 3 == value) {
-					System.out.println(name + " " + LDMS2.count);
-					++LDMS2.count;
+				if (LDMS2.index % 3 == value) {
+					System.out.println(name);
+					++LDMS2.index;
 				}
 			} finally {
 				lock.unlock();
