@@ -6,30 +6,29 @@ public class Solution_6 {
         if (numRows == 1) {
             return s;
         }
-        String[][] strArr = new String[numRows][s.length()];
+        StringBuilder[] sbArray = new StringBuilder[s.length() > numRows ? numRows : s.length()];
+        for (int i = 0; i < sbArray.length; i++) {
+            sbArray[i] = new StringBuilder();
+        }i
         boolean isPlus = false;
-        int start = 0;
+        int index = 0;
         for (int i = 0; i < s.length(); i++) {
-            strArr[start][i] = s.substring(i, i + 1);
-            if (start == 0) {
+            sbArray[index].append(s.charAt(i));
+            // change index
+            if (index == 0) {
                 isPlus = true;
-            } else if (start == numRows -1) {
+            } else if (index == sbArray.length -1) {
                 isPlus = false;
             }
             if (isPlus) {
-                ++start;
+                ++index;
             } else {
-                --start;
+                --index;
             }
         }
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < numRows; i++) {
-            for (int j = 0; j < s.length(); j++) {
-                if (strArr[i][j] != null) {
-                    sb.append(strArr[i][j]);
-                }
-            }
+        for (int i = 1; i < sbArray.length; i++) {
+            sbArray[0].append(sbArray[i].toString());
         }
-        return sb.toString();
+        return sbArray[0].toString();
     }
 }

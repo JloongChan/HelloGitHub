@@ -6,7 +6,7 @@ public class Solution_5 {
         //System.out.println(longestPalindrome("eabcb"));
     }
 
-    static StringBuilder result = null;
+    StringBuilder result = null;
 
     public String longestPalindrome(String s) {
         if (s.length() == 0) {
