@@ -9,7 +9,7 @@ public class Solution_6 {
         StringBuilder[] sbArray = new StringBuilder[s.length() > numRows ? numRows : s.length()];
         for (int i = 0; i < sbArray.length; i++) {
             sbArray[i] = new StringBuilder();
-        }i
+        }
         boolean isPlus = false;
         int index = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -17,7 +17,7 @@ public class Solution_6 {
             // change index
             if (index == 0) {
                 isPlus = true;
-            } else if (index == sbArray.length -1) {
+            } else if (index == sbArray.length - 1) {
                 isPlus = false;
             }
             if (isPlus) {
